@@ -11,9 +11,10 @@
                 <a href="<?php echo e(route('tickets.edit', $ticket->slug)); ?>" class="btn btn-info">Edit</a>
                 <form method="post" action="<?php echo e(route('tickets.destroy', $ticket->slug)); ?>" class="pull-left">
                     <?php echo csrf_field(); ?>
-                        <div>
-                            <button type="submit" class="btn btn-warning">Delete</button>
-                        </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-warning">Delete</button>
+                    </div>
                 </form>
 
                 <div class="clearfix"></div>
@@ -44,6 +45,7 @@
 
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                     <input type="hidden" name="post_id" value="<?php echo $ticket->id; ?>">
+                    <input type="hidden" name="post_type" value="App\Ticket">
 
                     <fieldset>
                         <legend>Reply</legend>
@@ -65,4 +67,8 @@
     </div>
 
 <?php $__env->stopSection(); ?>
+
+
+
+
 <?php echo $__env->make('master', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

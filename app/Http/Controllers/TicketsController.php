@@ -25,10 +25,10 @@ class TicketsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('tickets.create');
-    }
+    // public function create()
+    // {
+    //     return view('tickets.create');
+    // }
 
     /**
      * Store a newly created resource in storage.

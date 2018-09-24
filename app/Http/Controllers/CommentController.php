@@ -9,13 +9,12 @@ class CommentController extends Controller
 {
     public function newComment(CommentFormRequest $request)
     {
-    	$comment = new Comment([
+    	Comment::create([
     		'content' => $request->content,
     		'post_id' => $request->post_id,
+    		'post_type' => $request->post_type,
     	]);
-
-    	$comment->save();
-
+        
     	// back(): redirect users back to the previous page
     	return redirect()->back()->with('status', 'Your comment has been created');
     }
